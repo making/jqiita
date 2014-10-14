@@ -23,9 +23,10 @@ import jqiita.exception.QiitaErrorHandler;
 import jqiita.item.Items;
 import jqiita.item.Lgtm;
 import jqiita.item.Stocks;
+import jqiita.project.Projects;
 import jqiita.tag.FollowingTags;
 import jqiita.tag.Tags;
-import jqiita.template.ExpandedTemplate;
+import jqiita.template.ExpandedTemplates;
 import jqiita.template.Templates;
 import jqiita.user.AuthenticatedUser;
 import jqiita.user.Followees;
@@ -101,6 +102,10 @@ public class QiitaClient {
         return resource(Stocks.class);
     }
 
+    public Projects projects() {
+        return resource(Projects.class);
+    }
+
     public FollowingTags followingTags() {
         return resource(FollowingTags.class);
     }
@@ -109,8 +114,8 @@ public class QiitaClient {
         return resource(Tags.class);
     }
 
-    public ExpandedTemplate expandedTemplate() {
-        return resource(ExpandedTemplate.class);
+    public ExpandedTemplates expandedTemplates() {
+        return resource(ExpandedTemplates.class);
     }
 
     public Templates templates() {
