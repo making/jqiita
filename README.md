@@ -56,10 +56,19 @@ Item item = Qiita.given()
 System.out.println(item);
 
 // update item
-Qiita.client()
+Qiita.given()
+        .accessToken("1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd")
+        .client()
         .items()
         .update(item.getId(),
                 new ItemRequest("Title has changed!", "* foo bar!", Arrays.asList(new TagRequest("hoge"))));
+
+// delete item
+Qiita.given()
+        .accessToken("1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd")
+        .client()
+        .items()
+        .delete(item.getId())
 
 // for Qiita:Team
 Qiita.given()
