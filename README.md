@@ -5,6 +5,7 @@
 ## How to use
 
 ``` java
+// list items
 Qiita.client()
         .items()
         .list()
@@ -17,6 +18,23 @@ Qiita.given()
         .items()
         .list()
         .forEach(System.out::println);
+
+// list items by specific user
+Qiita.client()
+        .items()
+        .listByUserId("making@github")
+        .stream()
+        .map(Item::getTitle)
+        .forEach(System.out::println);
+
+// list items by specific tag
+Qiita.client()
+        .items()
+        .listByTagId("Java")
+        .stream()
+        .map(Item::getTitle)
+        .forEach(System.out::println);
+
 
 // with accessToken
 Qiita.given()
@@ -37,6 +55,12 @@ Item item = Qiita.given()
                 Arrays.asList(new TagRequest("hoge"))));
 System.out.println(item);
 
+// update item
+Qiita.client()
+        .items()
+        .update(item.getId(),
+                new ItemRequest("Title has changed!", "* foo bar!", Arrays.asList(new TagRequest("hoge"))));
+
 // for Qiita:Team
 Qiita.given()
         .accessToken("1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd")
@@ -46,7 +70,9 @@ Qiita.given()
         .list()
         .forEach(System.out::println);
 ```
-            
+
+**Note that `QiitaClient` is cached for each access token**. `Qiita.given().someConfigure()` is ignored once the client is created unless `QiitaClient#clearCache()` is called.
+
 ## How to set access token
 
 Priority is "Programatic > System Property > Environment Variable".
