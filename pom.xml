@@ -19,7 +19,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.14.4</version>
-            <!--<scope>provided</scope>-->
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
