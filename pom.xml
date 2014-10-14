@@ -6,7 +6,8 @@
 
     <groupId>am.ik.jqiita</groupId>
     <artifactId>jqiita</artifactId>
-    <version>0.8.0-SNAPSHOT</version>
+    <version>0.8.0</version>
+    <name>JQiita</name>
 
     <licenses>
         <license>

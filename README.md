@@ -2,7 +2,17 @@
 
 [Qiita API](http://qiita.com/api/v2/docs) Java Client
 
-## How to use
+## Usage
+
+``` xml
+<dependency>
+    <groupId>am.ik.jqiita</groupId>
+    <artifactId>jqiita</artifactId>
+    <version>0.8.0</version>
+</dependency>
+```
+
+## How to use API
 
 ``` java
 // list items
