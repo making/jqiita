@@ -11,7 +11,7 @@ class ConfiguredAccessToken {
 
     public ConfiguredAccessToken() {
         // PROPERTY > ENV
-        String token = null;
+        String token = "";
         if (System.getProperty(ACCESS_TOKEN_PROPERTY_NAME) != null) {
             token = System.getProperty(ACCESS_TOKEN_PROPERTY_NAME);
         } else if (System.getenv(ACCESS_TOKEN_ENV_NAME) != null) {

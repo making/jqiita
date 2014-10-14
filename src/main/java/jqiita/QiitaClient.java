@@ -66,7 +66,11 @@ public class QiitaClient {
                             .setConverter(new GsonConverter(gson))
                             .setLogLevel(RestAdapter.LogLevel.valueOf(logLevel))
                             .setErrorHandler(new QiitaErrorHandler())
-                            .setRequestInterceptor((request) -> request.addHeader("Authorization", "Bearer " + accessToken))
+                            .setRequestInterceptor((request) -> {
+                                if (accessToken != null && !accessToken.isEmpty()) {
+                                    request.addHeader("Authorization", "Bearer " + accessToken);
+                                }
+                            })
                             .build();
                 });
         return (T) objectCache.computeIfAbsent(getKey(clazz, accessToken), (key) -> builder.create(clazz));
