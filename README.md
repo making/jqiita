@@ -1,6 +1,6 @@
 # JQiita
 
-[Qiita API](http://qiita.com/api/v2/docs) Java Client
+[Qiita API v2](http://qiita.com/api/v2/docs) Java Client
 
 ## Usage
 
